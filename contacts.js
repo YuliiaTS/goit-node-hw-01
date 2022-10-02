@@ -5,9 +5,7 @@ const contactsPath = path.join(__dirname, "db/contacts.json");
 
 const listContacts = async () => {
     const data = await fs.readFile(contactsPath);
-    const contacts = JSON.parse(data);
-
-    return contacts;
+    return JSON.parse(data);
 };
 
 function getContactById(contactId) {
