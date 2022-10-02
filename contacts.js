@@ -22,11 +22,11 @@ function addContact(name, email, phone) {
   // ...твій код
 }
 
-const contacts = {
-  listContacts,
-  getContactById,
-  removeContact,
-  addContact,
-};
+// const contacts = {
+//   listContacts,
+//   getContactById,
+//   removeContact,
+//   addContact,
+// };
 
-module.exports = contacts;
+module.exports = { listContacts, getContactById, addContact, removeContact };

@@ -1,11 +1,17 @@
-const contacts = require('./contacts');
+const {
+  listContacts,
+  getContactById,
+  addContact,
+  removeContact,
+} = require('./contacts');
 
 const argv = require("yargs").argv;
 
-function invokeAction({ action, id, name, email, phone }) {
+const invokeAction = async({ action, id, name, email, phone }) => {
   switch (action) {
     case "list":
-      // ...
+      const list = await listContacts();
+      console.table(list);
       break;
 
     case "get":
@@ -25,4 +31,4 @@ function invokeAction({ action, id, name, email, phone }) {
   }
 }
 
-invokeAction(argv);
+invokeAction({action: "list"});

@@ -21,7 +21,8 @@
   "homepage": "https://github.com/YuliiaTS/goit-node-hw-01#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "yargs": "^17.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
