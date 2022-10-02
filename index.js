@@ -15,7 +15,8 @@ const invokeAction = async({ action, id, name, email, phone }) => {
       break;
 
     case "get":
-      // ... id
+      const oneContact = await getContactById(id);
+      console.log(oneContact);
       break;
 
     case "add":
@@ -31,4 +32,5 @@ const invokeAction = async({ action, id, name, email, phone }) => {
   }
 }
 
-invokeAction({action: "list"});
+// invokeAction({action: "list"});
+invokeAction({action: "get", id: "5"});

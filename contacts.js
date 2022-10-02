@@ -4,13 +4,15 @@ const path = require("path");
 const contactsPath = path.join(__dirname, "db/contacts.json");
 
 const listContacts = async () => {
-    const data = await fs.readFile(contactsPath);
-    return JSON.parse(data);
+  const data = await fs.readFile(contactsPath);
+  return JSON.parse(data);
 };
 
-function getContactById(contactId) {
-  // ...твій код
-}
+const getContactById = async (contactId) => {
+  const contacts = await listContacts();
+  const rezult = contacts.find((item) => item.id === contactId);
+  return rezult || null;
+};
 
 function removeContact(contactId) {
   // ...твій код
@@ -19,12 +21,5 @@ function removeContact(contactId) {
 function addContact(name, email, phone) {
   // ...твій код
 }
-
-// const contacts = {
-//   listContacts,
-//   getContactById,
-//   removeContact,
-//   addContact,
-// };
 
 module.exports = { listContacts, getContactById, addContact, removeContact };
